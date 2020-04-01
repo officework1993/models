@@ -56,7 +56,9 @@ from deeplab.core import dense_prediction_cell
 from deeplab.core import feature_extractor
 from deeplab.core import utils
 
-slim = tf.contrib.slim
+import tf_slim
+
+slim = tf_slim
 
 LOGITS_SCOPE_NAME = 'logits'
 MERGED_LOGITS_SCOPE = 'merged_logits'

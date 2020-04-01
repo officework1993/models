@@ -21,7 +21,7 @@ from deeplab.core import nas_network
 from deeplab.core import resnet_v1_beta
 from deeplab.core import xception
 from tf_slim.nets import resnet_utils
-from tf_slim.nets.mobilenet import mobilenet_v2
+from nets.mobilenet import mobilenet_v2
 
 
 import tf_slim
