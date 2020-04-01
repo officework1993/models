@@ -28,11 +28,10 @@ from __future__ import print_function
 
 import functools
 import tensorflow as tf
-import tf_slim
 
-from tf_slim.nets import resnet_utils
+from tensorflow.contrib.slim.nets import resnet_utils
 
-slim = tf_slim
+slim = tf.contrib.slim
 
 _DEFAULT_MULTI_GRID = [1, 1, 1]
 
@@ -69,7 +68,7 @@ def bottleneck(inputs,
   Returns:
     The ResNet unit's output.
   """
-  with tf.variable_scope(scope, 'bottleneck_v1', [inputs]) as sc:
+  with tf.compat.v1.variable_scope(scope, 'bottleneck_v1', [inputs]) as sc:
     depth_in = slim.utils.last_dimension(inputs.get_shape(), min_rank=4)
     if depth == depth_in:
       shortcut = resnet_utils.subsample(inputs, stride, 'shortcut')
@@ -173,7 +172,7 @@ def resnet_v1_beta(inputs,
                                       kernel_size=7,
                                       stride=2,
                                       scope='conv1')
-  with tf.variable_scope(scope, 'resnet_v1', [inputs], reuse=reuse) as sc:
+  with tf.compat.v1.variable_scope(scope, 'resnet_v1', [inputs], reuse=reuse) as sc:
     end_points_collection = sc.original_name_scope + '_end_points'
     with slim.arg_scope([slim.conv2d, bottleneck,
                          resnet_utils.stack_blocks_dense],
@@ -194,7 +193,7 @@ def resnet_v1_beta(inputs,
 
         if global_pool:
           # Global average pooling.
-          net = tf.reduce_mean(net, [1, 2], name='pool5', keepdims=True)
+          net = tf.reduce_mean(input_tensor=net, axis=[1, 2], name='pool5', keepdims=True)
         if num_classes is not None:
           net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None,
                             normalizer_fn=None, scope='logits')

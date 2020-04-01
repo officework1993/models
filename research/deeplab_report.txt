@@ -1,0 +1,1050 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 53 files
+Detected 49 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: deeplab/export_model.py
+--------------------------------------------------------------------------------
+deeplab/export_model.py:25:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/export_model.py:161:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/eval.py
+--------------------------------------------------------------------------------
+deeplab/eval.py:157:19: ERROR: Using member tf.contrib.training.SummaryAtEndHook in deprecated module tf.contrib. tf.contrib.training.SummaryAtEndHook cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:166:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:168:4: ERROR: Using member tf.contrib.tfprof.model_analyzer.print_model_analysis in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.print_model_analysis cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:170:23: ERROR: Using member tf.contrib.tfprof.model_analyzer.
+        TRAINABLE_VARS_PARAMS_STAT_OPTIONS in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.
+        TRAINABLE_VARS_PARAMS_STAT_OPTIONS cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:172:4: ERROR: Using member tf.contrib.tfprof.model_analyzer.print_model_analysis in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.print_model_analysis cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:174:23: ERROR: Using member tf.contrib.tfprof.model_analyzer.FLOAT_OPS_OPTIONS in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.FLOAT_OPS_OPTIONS cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/eval.py:175:4: ERROR: Using member tf.contrib.training.evaluate_repeatedly in deprecated module tf.contrib. tf.contrib.training.evaluate_repeatedly cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/model.py
+--------------------------------------------------------------------------------
+deeplab/model.py:59:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/model.py:200:23: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+--------------------------------------------------------------------------------
+File: deeplab/vis.py
+--------------------------------------------------------------------------------
+deeplab/vis.py:271:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/train.py
+--------------------------------------------------------------------------------
+deeplab/train.py:379:4: ERROR: Using member tf.contrib.quantize.create_training_graph in deprecated module tf.contrib. tf.contrib.quantize.create_training_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/train.py:398:23: ERROR: Using member tf.contrib.training.multiply_gradients in deprecated module tf.contrib. tf.contrib.training.multiply_gradients cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/train.py:493:11: ERROR: Using member tf.contrib.tfprof.ProfileContext in deprecated module tf.contrib. tf.contrib.tfprof.ProfileContext cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/deprecated/segmentation_dataset.py
+--------------------------------------------------------------------------------
+deeplab/deprecated/segmentation_dataset.py:55:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/evaluation/streaming_metrics.py
+--------------------------------------------------------------------------------
+deeplab/evaluation/streaming_metrics.py:42:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: deeplab/core/nas_network.py
+--------------------------------------------------------------------------------
+deeplab/core/nas_network.py:43:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_network.py:44:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_network.py:50:9: ERROR: Using member tf.contrib.training.HParams in deprecated module tf.contrib. tf.contrib.training.HParams cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/dense_prediction_cell.py
+--------------------------------------------------------------------------------
+deeplab/core/dense_prediction_cell.py:255:32: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+--------------------------------------------------------------------------------
+File: deeplab/core/preprocess_utils.py
+--------------------------------------------------------------------------------
+deeplab/core/preprocess_utils.py:350:21: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+deeplab/core/preprocess_utils.py:355:23: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+deeplab/core/preprocess_utils.py:480:24: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+--------------------------------------------------------------------------------
+File: deeplab/core/nas_network_test.py
+--------------------------------------------------------------------------------
+deeplab/core/nas_network_test.py:28:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_network_test.py:29:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_network_test.py:57:14: ERROR: Using member tf.contrib.training.HParams in deprecated module tf.contrib. tf.contrib.training.HParams cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/nas_cell.py
+--------------------------------------------------------------------------------
+deeplab/core/nas_cell.py:26:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_cell.py:27:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/nas_cell.py:179:3: ERROR: Using member tf.contrib.framework.add_arg_scope in deprecated module tf.contrib. tf.contrib.framework.add_arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/utils.py
+--------------------------------------------------------------------------------
+deeplab/core/utils.py:35:11: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+--------------------------------------------------------------------------------
+File: deeplab/core/resnet_v1_beta.py
+--------------------------------------------------------------------------------
+deeplab/core/resnet_v1_beta.py:34:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/xception.py
+--------------------------------------------------------------------------------
+deeplab/core/xception.py:51:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/resnet_v1_beta_test.py
+--------------------------------------------------------------------------------
+deeplab/core/resnet_v1_beta_test.py:30:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/feature_extractor.py
+--------------------------------------------------------------------------------
+deeplab/core/feature_extractor.py:27:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/core/xception_test.py
+--------------------------------------------------------------------------------
+deeplab/core/xception_test.py:24:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/core/xception_test.py:53:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+deeplab/core/xception_test.py:54:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+deeplab/core/xception_test.py:56:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+deeplab/core/xception_test.py:100:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+deeplab/core/xception_test.py:101:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+deeplab/core/xception_test.py:103:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: deeplab/utils/save_annotation.py
+--------------------------------------------------------------------------------
+deeplab/utils/save_annotation.py:65:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: deeplab/utils/train_utils.py
+--------------------------------------------------------------------------------
+deeplab/utils/train_utils.py:72:15: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+deeplab/utils/train_utils.py:79:22: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+deeplab/utils/train_utils.py:163:25: ERROR: Using member tf.contrib.framework.get_variables_to_restore in deprecated module tf.contrib. tf.contrib.framework.get_variables_to_restore cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+deeplab/utils/train_utils.py:167:30: ERROR: Using member tf.contrib.framework.assign_from_checkpoint in deprecated module tf.contrib. tf.contrib.framework.assign_from_checkpoint cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: deeplab/datasets/remove_gt_colormap.py
+--------------------------------------------------------------------------------
+deeplab/datasets/remove_gt_colormap.py:63:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: deeplab/datasets/data_generator.py
+--------------------------------------------------------------------------------
+deeplab/datasets/data_generator.py:336:11: WARNING: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'deeplab'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'deeplab/common.py'
+ outputting to 'deeplab_v2/common.py'
+--------------------------------------------------------------------------------
+
+24:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+192:11: INFO: Renamed 'tf.gfile.Open' to 'tf.io.gfile.GFile'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/model_test.py'
+ outputting to 'deeplab_v2/model_test.py'
+--------------------------------------------------------------------------------
+
+63:21: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+96:17: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+103:17: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+133:17: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/input_preprocess.py'
+ outputting to 'deeplab_v2/input_preprocess.py'
+--------------------------------------------------------------------------------
+
+72:4: INFO: Renamed 'tf.logging.warning' to 'tf.compat.v1.logging.warning'
+106:16: INFO: Added keywords to args of function 'tf.shape'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/common_test.py'
+ outputting to 'deeplab_v2/common_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/export_model.py'
+ outputting to 'deeplab_v2/export_model.py'
+--------------------------------------------------------------------------------
+
+25:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+26:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+85:16: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+86:24: INFO: Added keywords to args of function 'tf.shape'
+101:23: INFO: Added keywords to args of function 'tf.shape'
+111:2: INFO: Renamed 'tf.logging.set_verbosity' to 'tf.compat.v1.logging.set_verbosity'
+111:27: INFO: Renamed 'tf.logging.INFO' to 'tf.compat.v1.logging.INFO'
+112:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+124:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+130:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+151:22: INFO: Removed argument align_corners for function tf.image.resize_images
+151:22: INFO: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+161:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+163:12: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+163:27: INFO: Renamed 'tf.all_variables' to 'tf.compat.v1.all_variables'
+166:4: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+167:16: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+180:6: INFO: Renamed 'tf.train.write_graph' to 'tf.io.write_graph'
+186:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/eval.py'
+ outputting to 'deeplab_v2/eval.py'
+--------------------------------------------------------------------------------
+
+25:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+84:2: INFO: Renamed 'tf.logging.set_verbosity' to 'tf.compat.v1.logging.set_verbosity'
+84:27: INFO: Renamed 'tf.logging.INFO' to 'tf.compat.v1.logging.INFO'
+101:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+102:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+120:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+124:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+137:14: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+142:13: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+152:22: INFO: tf.metrics.mean_iou requires manual check. tf.metrics have been replaced with object oriented versions in TF 2.0 and after. The metric function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+152:22: INFO: Renamed 'tf.metrics.mean_iou' to 'tf.compat.v1.metrics.mean_iou'
+154:4: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+154:4: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+156:17: INFO: tf.summary.merge_all requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+156:17: INFO: Renamed 'tf.summary.merge_all' to 'tf.compat.v1.summary.merge_all'
+157:19: ERROR: Using member tf.contrib.training.SummaryAtEndHook in deprecated module tf.contrib. tf.contrib.training.SummaryAtEndHook cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+166:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+168:4: ERROR: Using member tf.contrib.tfprof.model_analyzer.print_model_analysis in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.print_model_analysis cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+169:8: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+170:23: ERROR: Using member tf.contrib.tfprof.model_analyzer.
+        TRAINABLE_VARS_PARAMS_STAT_OPTIONS in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.
+        TRAINABLE_VARS_PARAMS_STAT_OPTIONS cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+172:4: ERROR: Using member tf.contrib.tfprof.model_analyzer.print_model_analysis in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.print_model_analysis cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+173:8: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+174:23: ERROR: Using member tf.contrib.tfprof.model_analyzer.FLOAT_OPS_OPTIONS in deprecated module tf.contrib. tf.contrib.tfprof.model_analyzer.FLOAT_OPS_OPTIONS cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+175:4: ERROR: Using member tf.contrib.training.evaluate_repeatedly in deprecated module tf.contrib. tf.contrib.training.evaluate_repeatedly cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+188:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/model.py'
+ outputting to 'deeplab_v2/model.py'
+--------------------------------------------------------------------------------
+
+59:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+120:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+120:27: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+129:11: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+129:29: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+131:12: INFO: Renamed 'tf.reverse_v2' to 'tf.reverse'
+141:10: INFO: Added keywords to args of function 'tf.shape'
+150:12: INFO: Renamed 'tf.reverse_v2' to 'tf.reverse'
+151:12: INFO: Added keywords to args of function 'tf.shape'
+159:18: INFO: Added keywords to args of function 'tf.reduce_mean'
+160:37: INFO: Added keywords to args of function 'tf.argmax'
+195:32: INFO: Added keywords to args of function 'tf.shape'
+197:28: INFO: Added keywords to args of function 'tf.argmax'
+199:23: INFO: Added keywords to args of function 'tf.argmax'
+200:23: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+200:23: INFO: Changed tf.image.resize_nearest_neighbor call to tf.image.resize(..., method=tf.image.ResizeMethod.NEAREST_NEIGHBOR).
+202:10: INFO: Added keywords to args of function 'tf.shape'
+254:38: INFO: Added keywords to args of function 'tf.shape'
+257:38: INFO: Added keywords to args of function 'tf.shape'
+310:14: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+401:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+434:30: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+467:28: INFO: Added keywords to args of function 'tf.shape'
+468:27: INFO: Added keywords to args of function 'tf.shape'
+469:30: INFO: Added keywords to args of function 'tf.reduce_mean'
+633:26: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+640:11: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+745:26: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+746:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+746:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+748:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/__init__.py'
+ outputting to 'deeplab_v2/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/vis.py'
+ outputting to 'deeplab_v2/vis.py'
+--------------------------------------------------------------------------------
+
+29:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+188:2: INFO: Renamed 'tf.logging.set_verbosity' to 'tf.compat.v1.logging.set_verbosity'
+188:27: INFO: Renamed 'tf.logging.INFO' to 'tf.compat.v1.logging.INFO'
+207:4: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+211:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+213:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+216:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+218:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+230:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+236:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+256:29: INFO: Added keywords to args of function 'tf.shape'
+261:22: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+264:10: INFO: Removed argument align_corners for function tf.image.resize_images
+264:10: INFO: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+269:4: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+271:6: ERROR: Using member tf.contrib.quantize.create_eval_graph in deprecated module tf.contrib. tf.contrib.quantize.create_eval_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+276:27: INFO: Renamed 'tf.contrib.training.checkpoints_iterator' to 'tf.train.checkpoints_iterator'
+280:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+283:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+285:17: INFO: Renamed 'tf.train.Scaffold' to 'tf.compat.v1.train.Scaffold'
+285:43: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+286:24: INFO: Renamed 'tf.train.ChiefSessionCreator' to 'tf.compat.v1.train.ChiefSessionCreator'
+290:11: INFO: Renamed 'tf.train.MonitoredSession' to 'tf.compat.v1.train.MonitoredSession'
+296:10: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+310:6: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+320:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/train.py'
+ outputting to 'deeplab_v2/train.py'
+--------------------------------------------------------------------------------
+
+28:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+267:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+268:6: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+271:11: INFO: tf.losses.get_losses requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+271:11: INFO: Renamed 'tf.losses.get_losses' to 'tf.compat.v1.losses.get_losses'
+273:4: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+273:4: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+275:24: INFO: tf.losses.get_regularization_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+275:24: INFO: Renamed 'tf.losses.get_regularization_loss' to 'tf.compat.v1.losses.get_regularization_loss'
+276:2: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+276:2: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+302:11: INFO: Added keywords to args of function 'tf.reduce_mean'
+321:19: INFO: Renamed 'tf.model_variables' to 'tf.compat.v1.model_variables'
+322:4: INFO: tf.summary.histogram requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+322:4: INFO: Renamed 'tf.summary.histogram' to 'tf.compat.v1.summary.histogram'
+326:4: INFO: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+326:4: INFO: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+331:4: INFO: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+331:4: INFO: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+333:33: INFO: Added keywords to args of function 'tf.argmax'
+335:4: INFO: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+335:4: INFO: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+350:16: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+357:2: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+357:2: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+359:14: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+367:11: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+367:11: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+379:4: ERROR: Using member tf.contrib.quantize.create_training_graph in deprecated module tf.contrib. tf.contrib.quantize.create_training_graph cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+385:11: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+385:11: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+398:23: ERROR: Using member tf.contrib.training.multiply_gradients in deprecated module tf.contrib. tf.contrib.training.multiply_gradients cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+407:17: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+407:35: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+411:17: INFO: tf.losses.get_total_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+411:17: INFO: Renamed 'tf.losses.get_total_loss' to 'tf.compat.v1.losses.get_total_loss'
+416:17: INFO: Added keywords to args of function 'tf.cond'
+418:16: INFO: Renamed 'tf.Print' to 'tf.compat.v1.Print'
+421:4: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+421:4: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+426:17: INFO: tf.summary.merge_all requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+426:17: INFO: Renamed 'tf.summary.merge_all' to 'tf.compat.v1.summary.merge_all'
+432:2: INFO: Renamed 'tf.logging.set_verbosity' to 'tf.compat.v1.logging.set_verbosity'
+432:27: INFO: Renamed 'tf.logging.INFO' to 'tf.compat.v1.logging.INFO'
+434:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+435:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+439:19: INFO: Renamed 'tf.train.replica_device_setter' to 'tf.compat.v1.train.replica_device_setter'
+467:23: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+481:17: INFO: Renamed 'tf.train.Scaffold' to 'tf.compat.v1.train.Scaffold'
+486:18: INFO: Renamed 'tf.train.StopAtStepHook' to 'tf.estimator.StopAtStepHook'
+491:8: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+493:11: ERROR: Using member tf.contrib.tfprof.ProfileContext in deprecated module tf.contrib. tf.contrib.tfprof.ProfileContext cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+495:13: INFO: Renamed 'tf.train.MonitoredTrainingSession' to 'tf.compat.v1.train.MonitoredTrainingSession'
+513:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/deprecated/segmentation_dataset.py'
+ outputting to 'deeplab_v2/deprecated/segmentation_dataset.py'
+--------------------------------------------------------------------------------
+
+55:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+157:23: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+159:24: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+161:22: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+163:22: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+165:21: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+167:42: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+169:41: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+191:13: INFO: Renamed 'tf.TFRecordReader' to 'tf.compat.v1.TFRecordReader'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/deprecated/__init__.py'
+ outputting to 'deeplab_v2/deprecated/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/panoptic_quality_test.py'
+ outputting to 'deeplab_v2/evaluation/panoptic_quality_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/eval_coco_format_test.py'
+ outputting to 'deeplab_v2/evaluation/eval_coco_format_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/test_utils_test.py'
+ outputting to 'deeplab_v2/evaluation/test_utils_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/streaming_metrics.py'
+ outputting to 'deeplab_v2/evaluation/streaming_metrics.py'
+--------------------------------------------------------------------------------
+
+36:9: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+41:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+42:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+42:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+46:20: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+46:20: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+49:12: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+49:42: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+51:20: INFO: Renamed 'tf.assign_add' to 'tf.compat.v1.assign_add'
+109:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+110:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+111:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+112:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+113:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+114:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+115:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+116:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+124:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+125:23: INFO: Renamed 'tf.py_func' to 'tf.compat.v1.py_func'
+203:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+204:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+205:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+206:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+207:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+208:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+209:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+210:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+211:6: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+217:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+218:23: INFO: Renamed 'tf.py_func' to 'tf.compat.v1.py_func'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/parsing_covering_test.py'
+ outputting to 'deeplab_v2/evaluation/parsing_covering_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/test_utils.py'
+ outputting to 'deeplab_v2/evaluation/test_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/panoptic_quality.py'
+ outputting to 'deeplab_v2/evaluation/panoptic_quality.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/parsing_covering.py'
+ outputting to 'deeplab_v2/evaluation/parsing_covering.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/streaming_metrics_test.py'
+ outputting to 'deeplab_v2/evaluation/streaming_metrics_test.py'
+--------------------------------------------------------------------------------
+
+70:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+71:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+72:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+73:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+92:15: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+163:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+164:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+165:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+166:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+178:15: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+240:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+241:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+242:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+243:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+264:15: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+337:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+338:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+339:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+340:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+355:15: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+468:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+469:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+470:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+471:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+486:15: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/eval_coco_format.py'
+ outputting to 'deeplab_v2/evaluation/eval_coco_format.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/base_metric.py'
+ outputting to 'deeplab_v2/evaluation/base_metric.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/evaluation/__init__.py'
+ outputting to 'deeplab_v2/evaluation/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/nas_genotypes.py'
+ outputting to 'deeplab_v2/core/nas_genotypes.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/preprocess_utils_test.py'
+ outputting to 'deeplab_v2/core/preprocess_utils_test.py'
+--------------------------------------------------------------------------------
+
+31:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+61:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+87:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+88:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+107:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+108:4: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+128:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+153:4: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+154:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+163:4: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+167:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+177:4: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+185:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+186:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+200:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+201:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+212:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+213:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+226:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+227:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+283:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+303:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+315:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+334:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+360:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+361:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+388:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+389:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+418:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+419:14: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/nas_network.py'
+ outputting to 'deeplab_v2/core/nas_network.py'
+--------------------------------------------------------------------------------
+
+43:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+44:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+50:9: ERROR: Using member tf.contrib.training.HParams in deprecated module tf.contrib. tf.contrib.training.HParams cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+73:24: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+74:24: INFO: Changing tf.contrib.layers.variance_scaling_initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+136:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+177:12: INFO: Added keywords to args of function 'tf.reduce_mean'
+203:4: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+205:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+250:4: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+252:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/dense_prediction_cell.py'
+ outputting to 'deeplab_v2/core/dense_prediction_cell.py'
+--------------------------------------------------------------------------------
+
+206:28: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+213:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+223:12: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+255:32: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+255:32: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/preprocess_utils.py'
+ outputting to 'deeplab_v2/core/preprocess_utils.py'
+--------------------------------------------------------------------------------
+
+43:17: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+50:21: INFO: Renamed 'tf.reverse_v2' to 'tf.reverse'
+54:12: INFO: Added keywords to args of function 'tf.cond'
+78:31: INFO: Added keywords to args of function 'tf.shape'
+107:7: INFO: Using default_name as name in call to name_scope.
+
+108:12: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+155:13: INFO: Added keywords to args of function 'tf.pad'
+185:19: INFO: Added keywords to args of function 'tf.shape'
+203:12: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+250:18: INFO: Added keywords to args of function 'tf.shape'
+265:14: INFO: Added keywords to args of function 'tf.shape'
+287:18: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+289:17: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+318:11: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+324:18: INFO: Renamed 'tf.lin_space' to 'tf.linspace'
+325:27: INFO: Renamed 'tf.random_shuffle' to 'tf.random.shuffle'
+343:16: INFO: Added keywords to args of function 'tf.shape'
+350:21: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+350:21: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+355:23: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+355:23: INFO: Changed tf.image.resize_nearest_neighbor call to tf.image.resize(..., method=tf.image.ResizeMethod.NEAREST_NEIGHBOR).
+377:7: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+377:7: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+384:22: INFO: Added keywords to args of function 'tf.shape'
+436:7: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+436:7: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+454:19: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+454:31: INFO: Renamed 'tf.ceil' to 'tf.math.ceil'
+455:18: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+455:30: INFO: Renamed 'tf.ceil' to 'tf.math.ceil'
+464:21: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+464:33: INFO: Renamed 'tf.ceil' to 'tf.math.ceil'
+465:20: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+465:32: INFO: Renamed 'tf.ceil' to 'tf.math.ceil'
+467:17: INFO: Added keywords to args of function 'tf.cond'
+468:18: INFO: Added keywords to args of function 'tf.reduce_max'
+474:27: INFO: Removed argument align_corners for function tf.image.resize_images
+474:27: INFO: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+480:24: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+480:24: INFO: Changed tf.image.resize_nearest_neighbor call to tf.image.resize(..., method=tf.image.ResizeMethod.NEAREST_NEIGHBOR).
+485:24: INFO: Removed argument align_corners for function tf.image.resize_images
+485:24: INFO: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/nas_network_test.py'
+ outputting to 'deeplab_v2/core/nas_network_test.py'
+--------------------------------------------------------------------------------
+
+28:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+29:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+35:11: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+37:11: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+57:14: ERROR: Using member tf.contrib.training.HParams in deprecated module tf.contrib. tf.contrib.training.HParams cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+77:16: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/utils_test.py'
+ outputting to 'deeplab_v2/core/utils_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/nas_cell.py'
+ outputting to 'deeplab_v2/core/nas_cell.py'
+--------------------------------------------------------------------------------
+
+26:12: ERROR: Using member tf.contrib.framework.arg_scope in deprecated module tf.contrib. tf.contrib.framework.arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+27:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+67:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+70:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+73:15: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+77:15: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+81:15: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+85:11: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+99:24: INFO: Added keywords to args of function 'tf.shape'
+138:40: INFO: Added keywords to args of function 'tf.shape'
+139:39: INFO: Added keywords to args of function 'tf.shape'
+189:29: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+193:21: INFO: Added keywords to args of function 'tf.shape'
+195:23: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+179:3: ERROR: Using member tf.contrib.framework.add_arg_scope in deprecated module tf.contrib. tf.contrib.framework.add_arg_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/utils.py'
+ outputting to 'deeplab_v2/core/utils.py'
+--------------------------------------------------------------------------------
+
+35:11: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+35:11: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+50:20: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+90:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+90:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+98:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+98:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+100:26: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/resnet_v1_beta.py'
+ outputting to 'deeplab_v2/core/resnet_v1_beta.py'
+--------------------------------------------------------------------------------
+
+34:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+71:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+175:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+196:16: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/xception.py'
+ outputting to 'deeplab_v2/core/xception.py'
+--------------------------------------------------------------------------------
+
+51:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+89:18: INFO: Added keywords to args of function 'tf.pad'
+257:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+370:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+374:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+443:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+472:16: INFO: Added keywords to args of function 'tf.reduce_mean'
+774:28: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+780:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+780:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+787:30: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/dense_prediction_cell_test.py'
+ outputting to 'deeplab_v2/core/dense_prediction_cell_test.py'
+--------------------------------------------------------------------------------
+
+112:17: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+117:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+123:17: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+129:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/__init__.py'
+ outputting to 'deeplab_v2/core/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/resnet_v1_beta_test.py'
+ outputting to 'deeplab_v2/core/resnet_v1_beta_test.py'
+--------------------------------------------------------------------------------
+
+30:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+36:11: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+38:11: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+192:12: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+206:12: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+212:21: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+232:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+249:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+268:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/feature_extractor.py'
+ outputting to 'deeplab_v2/core/feature_extractor.py'
+--------------------------------------------------------------------------------
+
+27:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+64:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+187:17: INFO: Added keywords to args of function 'tf.shape'
+196:40: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/core/xception_test.py'
+ outputting to 'deeplab_v2/core/xception_test.py'
+--------------------------------------------------------------------------------
+
+24:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+30:11: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+32:11: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+53:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+53:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+54:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+54:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+56:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+56:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+57:4: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+61:18: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+68:18: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+79:18: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+84:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+100:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+100:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+101:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+101:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+103:4: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+103:4: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+104:4: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+108:18: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+116:18: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+131:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+366:12: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+381:12: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+388:21: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+409:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+427:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+447:15: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+470:6: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+480:20: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/utils/save_annotation.py'
+ outputting to 'deeplab_v2/utils/save_annotation.py'
+--------------------------------------------------------------------------------
+
+64:7: INFO: Renamed 'tf.gfile.Open' to 'tf.io.gfile.GFile'
+65:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/utils/train_utils.py'
+ outputting to 'deeplab_v2/utils/train_utils.py'
+--------------------------------------------------------------------------------
+
+25:9: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+25:40: INFO: Renamed 'tf.div' to 'tf.compat.v1.div'
+72:15: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+72:15: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+79:22: WARNING: tf.image.resize_nearest_neighbor called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_nearest_neighbor.
+79:22: INFO: Changed tf.image.resize_nearest_neighbor call to tf.image.resize(..., method=tf.image.ResizeMethod.NEAREST_NEIGHBOR).
+85:22: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+92:6: INFO: tf.losses.softmax_cross_entropy requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+92:6: INFO: Renamed 'tf.losses.softmax_cross_entropy' to 'tf.compat.v1.losses.softmax_cross_entropy'
+100:11: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+100:11: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+104:23: INFO: Renamed 'tf.nn.softmax_cross_entropy_with_logits_v2' to 'tf.nn.softmax_cross_entropy_with_logits'
+109:21: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+109:33: INFO: Added keywords to args of function 'tf.shape'
+113:25: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+116:24: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+116:36: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+118:25: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+124:21: INFO: Added keywords to args of function 'tf.reduce_sum'
+125:22: INFO: Added keywords to args of function 'tf.reduce_sum'
+126:12: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+128:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+128:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+149:4: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+153:4: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+156:2: INFO: Renamed 'tf.logging.info' to 'tf.compat.v1.logging.info'
+163:25: ERROR: Using member tf.contrib.framework.get_variables_to_restore in deprecated module tf.contrib. tf.contrib.framework.get_variables_to_restore cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+167:30: ERROR: Using member tf.contrib.framework.assign_from_checkpoint in deprecated module tf.contrib. tf.contrib.framework.assign_from_checkpoint cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+171:18: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+200:13: INFO: Renamed 'tf.model_variables' to 'tf.compat.v1.model_variables'
+259:16: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+266:20: INFO: tf.train.exponential_decay requires manual check. To use learning rate decay schedules with TensorFlow 2.0, switch to the schedules in `tf.keras.optimizers.schedules`.
+
+266:20: INFO: Renamed 'tf.train.exponential_decay' to 'tf.compat.v1.train.exponential_decay'
+273:20: INFO: tf.train.polynomial_decay requires manual check. To use learning rate decay schedules with TensorFlow 2.0, switch to the schedules in `tf.keras.optimizers.schedules`.
+
+273:20: INFO: Renamed 'tf.train.polynomial_decay' to 'tf.compat.v1.train.polynomial_decay'
+289:8: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+294:9: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/utils/get_dataset_colormap_test.py'
+ outputting to 'deeplab_v2/utils/get_dataset_colormap_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/utils/get_dataset_colormap.py'
+ outputting to 'deeplab_v2/utils/get_dataset_colormap.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/utils/__init__.py'
+ outputting to 'deeplab_v2/utils/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/data_generator_test.py'
+ outputting to 'deeplab_v2/datasets/data_generator_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/remove_gt_colormap.py'
+ outputting to 'deeplab_v2/datasets/remove_gt_colormap.py'
+--------------------------------------------------------------------------------
+
+29:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+31:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+35:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+37:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+62:7: INFO: Renamed 'tf.gfile.Open' to 'tf.io.gfile.GFile'
+63:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+68:9: INFO: Renamed 'tf.gfile.IsDirectory' to 'tf.io.gfile.isdir'
+69:4: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+83:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/build_cityscapes_data.py'
+ outputting to 'deeplab_v2/datasets/build_cityscapes_data.py'
+--------------------------------------------------------------------------------
+
+70:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+72:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+76:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+149:9: INFO: Renamed 'tf.python_io.TFRecordWriter' to 'tf.io.TFRecordWriter'
+157:21: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+160:19: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+183:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/build_voc2012_data.py'
+ outputting to 'deeplab_v2/datasets/build_voc2012_data.py'
+--------------------------------------------------------------------------------
+
+59:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+61:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+65:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+70:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+75:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+106:9: INFO: Renamed 'tf.python_io.TFRecordWriter' to 'tf.io.TFRecordWriter'
+116:21: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+122:19: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+135:19: INFO: Renamed 'tf.gfile.Glob' to 'tf.io.gfile.glob'
+141:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/build_ade20k_data.py'
+ outputting to 'deeplab_v2/datasets/build_ade20k_data.py'
+--------------------------------------------------------------------------------
+
+25:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+27:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+31:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+36:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+41:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+46:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+65:14: INFO: Renamed 'tf.gfile.Glob' to 'tf.io.gfile.glob'
+85:9: INFO: Renamed 'tf.python_io.TFRecordWriter' to 'tf.io.TFRecordWriter'
+94:21: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+98:19: INFO: Renamed 'tf.gfile.FastGFile' to 'tf.compat.v1.gfile.FastGFile'
+111:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+118:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/build_data.py'
+ outputting to 'deeplab_v2/datasets/build_data.py'
+--------------------------------------------------------------------------------
+
+36:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+38:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+41:0: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+63:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+65:22: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/__init__.py'
+ outputting to 'deeplab_v2/datasets/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'deeplab/datasets/data_generator.py'
+ outputting to 'deeplab_v2/datasets/data_generator.py'
+--------------------------------------------------------------------------------
+
+170:6: INFO: Renamed 'tf.logging.warning' to 'tf.compat.v1.logging.warning'
+211:13: INFO: Added keywords to args of function 'tf.cond'
+218:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+220:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+222:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+224:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+226:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+228:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+230:12: INFO: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+233:22: INFO: Added keywords to args of function 'tf.parse_single_example'
+233:22: INFO: Renamed 'tf.parse_single_example' to 'tf.io.parse_single_example'
+336:11: WARNING: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+347:11: INFO: Renamed 'tf.gfile.Glob' to 'tf.io.gfile.glob'
+--------------------------------------------------------------------------------
+

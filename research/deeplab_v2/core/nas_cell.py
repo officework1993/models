@@ -22,10 +22,10 @@ from __future__ import print_function
 import tensorflow as tf
 from deeplab.core.utils import resize_bilinear
 from deeplab.core.utils import scale_dimension
-import tf_slim
-arg_scope = tf_slim.ops.arg_scope
-slim = tf_slim
-from tf_slim.ops.arg_scope import add_arg_scope
+
+arg_scope = tf.contrib.framework.arg_scope
+slim = tf.contrib.slim
+
 
 class NASBaseCell(object):
   """NASNet Cell class that is used as a 'layer' in image architectures.
@@ -64,25 +64,25 @@ class NASBaseCell(object):
     self._filter_scaling = filter_scaling
     self._filter_size = int(self._num_conv_filters * filter_scaling)
 
-    with tf.variable_scope(scope):
+    with tf.compat.v1.variable_scope(scope):
       net = self._cell_base(net, prev_layer)
       for i in range(len(self._operations) // 2):
-        with tf.variable_scope('comb_iter_{}'.format(i)):
+        with tf.compat.v1.variable_scope('comb_iter_{}'.format(i)):
           h1 = net[self._hiddenstate_indices[i * 2]]
           h2 = net[self._hiddenstate_indices[i * 2 + 1]]
-          with tf.variable_scope('left'):
+          with tf.compat.v1.variable_scope('left'):
             h1 = self._apply_conv_operation(
                 h1, self._operations[i * 2], stride,
                 self._hiddenstate_indices[i * 2] < 2)
-          with tf.variable_scope('right'):
+          with tf.compat.v1.variable_scope('right'):
             h2 = self._apply_conv_operation(
                 h2, self._operations[i * 2 + 1], stride,
                 self._hiddenstate_indices[i * 2 + 1] < 2)
-          with tf.variable_scope('combine'):
+          with tf.compat.v1.variable_scope('combine'):
             h = h1 + h2
           net.append(h)
 
-      with tf.variable_scope('cell_output'):
+      with tf.compat.v1.variable_scope('cell_output'):
         net = self._combine_unused_states(net)
 
       return net
@@ -96,7 +96,7 @@ class NASBaseCell(object):
     else:
       if net.shape[2] != prev_layer.shape[2]:
         prev_layer = resize_bilinear(
-            prev_layer, tf.shape(net)[1:3], prev_layer.dtype)
+            prev_layer, tf.shape(input=net)[1:3], prev_layer.dtype)
       if filter_size != prev_layer.shape[3]:
         prev_layer = tf.nn.relu(prev_layer)
         prev_layer = slim.conv2d(prev_layer, filter_size, 1, scope='prev_1x1')
@@ -135,8 +135,8 @@ class NASBaseCell(object):
       kernel_size = int(operation.split('x')[0][-1])
       net = tf.nn.relu(net)
       if stride == 2:
-        scaled_height = scale_dimension(tf.shape(net)[1], 0.5)
-        scaled_width = scale_dimension(tf.shape(net)[2], 0.5)
+        scaled_height = scale_dimension(tf.shape(input=net)[1], 0.5)
+        scaled_width = scale_dimension(tf.shape(input=net)[2], 0.5)
         net = resize_bilinear(net, [scaled_height, scaled_width], net.dtype)
         net = slim.conv2d(net, filter_size, kernel_size, rate=1,
                           scope='atrous_{0}x{0}'.format(kernel_size))
@@ -176,8 +176,7 @@ class NASBaseCell(object):
     net = tf.concat(values=states_to_combine, axis=3)
     return net
 
-
-  @add_arg_scope
+  @tf.contrib.framework.add_arg_scope
   def _apply_drop_path(self, net):
     """Apply drop_path regularization."""
     drop_path_keep_prob = self._drop_path_keep_prob
@@ -187,13 +186,13 @@ class NASBaseCell(object):
       layer_ratio = (self._cell_num + 1) / float(self._total_num_cells)
       drop_path_keep_prob = 1 - layer_ratio * (1 - drop_path_keep_prob)
       # Decrease keep prob over time.
-      current_step = tf.cast(tf.train.get_or_create_global_step(), tf.float32)
+      current_step = tf.cast(tf.compat.v1.train.get_or_create_global_step(), tf.float32)
       current_ratio = tf.minimum(1.0, current_step / self._total_training_steps)
       drop_path_keep_prob = (1 - current_ratio * (1 - drop_path_keep_prob))
       # Drop path.
-      noise_shape = [tf.shape(net)[0], 1, 1, 1]
+      noise_shape = [tf.shape(input=net)[0], 1, 1, 1]
       random_tensor = drop_path_keep_prob
-      random_tensor += tf.random_uniform(noise_shape, dtype=tf.float32)
+      random_tensor += tf.random.uniform(noise_shape, dtype=tf.float32)
       binary_tensor = tf.cast(tf.floor(random_tensor), net.dtype)
       keep_prob_inv = tf.cast(1.0 / drop_path_keep_prob, net.dtype)
       net = net * keep_prob_inv * binary_tensor

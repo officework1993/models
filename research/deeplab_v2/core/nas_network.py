@@ -39,17 +39,15 @@ from deeplab.core import nas_genotypes
 from deeplab.core.nas_cell import NASBaseCell
 from deeplab.core.utils import resize_bilinear
 from deeplab.core.utils import scale_dimension
-from tensorboard.plugins.hparams import api as hp
 
-import tf_slim
-arg_scope = tf_slim.ops.arg_scope
-slim = tf_slim
+arg_scope = tf.contrib.framework.arg_scope
+slim = tf.contrib.slim
 
 
 def config(num_conv_filters=20,
            total_training_steps=500000,
            drop_path_keep_prob=1.0):
-  return hp.HParams(
+  return tf.contrib.training.HParams(
       # Multiplier when spatial size is reduced by 2.
       filter_scaling_rate=2.0,
       # Number of filters of the stem output tensor.
@@ -72,8 +70,9 @@ def nas_arg_scope(weight_decay=4e-5, batch_norm_decay=0.9997,
       'scale': True,
       'fused': True,
   }
-  weights_regularizer = tf.keras.regularizers.l2(weight_decay)
-  weights_initializer = tf.keras.initializers.VarianceScaling( scale=1/3.0, mode="fan_in",distribution="uniform")
+  weights_regularizer = tf.keras.regularizers.l2(0.5 * (weight_decay))
+  weights_initializer = tf.compat.v1.keras.initializers.VarianceScaling(
+      scale=1/3.0, mode=('FAN_IN').lower(), distribution=("uniform" if True else "truncated_normal"))
   with arg_scope([slim.fully_connected, slim.conv2d, slim.separable_conv2d],
                  weights_regularizer=weights_regularizer,
                  weights_initializer=weights_initializer):
@@ -134,7 +133,7 @@ def _build_nas_base(images,
     end_points: A dictionary from components of the network to the corresponding
       activation.
   """
-  with tf.variable_scope(scope, 'nas', [images], reuse=reuse):
+  with tf.compat.v1.variable_scope(scope, 'nas', [images], reuse=reuse):
     end_points = {}
     def add_and_check_endpoint(endpoint_name, net):
       end_points[endpoint_name] = net
@@ -175,7 +174,7 @@ def _build_nas_base(images,
 
     if global_pool:
       # Global average pooling.
-      net = tf.reduce_mean(net, [1, 2], name='global_pool', keepdims=True)
+      net = tf.reduce_mean(input_tensor=net, axis=[1, 2], name='global_pool', keepdims=True)
     if num_classes is not None:
       net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None,
                         normalizer_fn=None, scope='logits')
@@ -201,9 +200,9 @@ def pnasnet(images,
     hparams.set_hparam('total_training_steps',
                        nas_training_hyper_parameters['total_training_steps'])
   if not is_training:
-    tf.logging.info('During inference, setting drop_path_keep_prob = 1.0.')
+    tf.compat.v1.logging.info('During inference, setting drop_path_keep_prob = 1.0.')
     hparams.set_hparam('drop_path_keep_prob', 1.0)
-  tf.logging.info(hparams)
+  tf.compat.v1.logging.info(hparams)
   if output_stride == 8:
     backbone = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   elif output_stride == 16:
@@ -248,9 +247,9 @@ def hnasnet(images,
     hparams.set_hparam('total_training_steps',
                        nas_training_hyper_parameters['total_training_steps'])
   if not is_training:
-    tf.logging.info('During inference, setting drop_path_keep_prob = 1.0.')
+    tf.compat.v1.logging.info('During inference, setting drop_path_keep_prob = 1.0.')
     hparams.set_hparam('drop_path_keep_prob', 1.0)
-  tf.logging.info(hparams)
+  tf.compat.v1.logging.info(hparams)
   operations = [
       'atrous_5x5', 'separable_3x3_2', 'separable_3x3_2', 'atrous_3x3',
       'separable_3x3_2', 'separable_3x3_2', 'separable_5x5_2',

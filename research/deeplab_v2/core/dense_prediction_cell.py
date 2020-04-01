@@ -203,14 +203,14 @@ class DensePredictionCell(object):
     hparams = self.hparams
     with slim.arg_scope(
         [slim.conv2d, slim.separable_conv2d],
-        weights_regularizer=slim.l2_regularizer(weight_decay),
+        weights_regularizer=tf.keras.regularizers.l2(0.5 * (weight_decay)),
         activation_fn=tf.nn.relu,
         normalizer_fn=slim.batch_norm,
         padding='SAME',
         stride=1,
         reuse=reuse):
       with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-        with tf.variable_scope(scope, _META_ARCHITECTURE_SCOPE, [features]):
+        with tf.compat.v1.variable_scope(scope, _META_ARCHITECTURE_SCOPE, [features]):
           depth = hparams['reduction_size']
           branch_logits = []
           for i, current_config in enumerate(self.config):
@@ -220,7 +220,7 @@ class DensePredictionCell(object):
                 crop_size=crop_size,
                 output_stride=output_stride,
                 image_pooling_crop_size=image_pooling_crop_size)
-            tf.logging.info(current_config)
+            tf.compat.v1.logging.info(current_config)
             if current_config[_INPUT] < 0:
               operation_input = features
             else:
@@ -252,10 +252,10 @@ class DensePredictionCell(object):
                   depth,
                   1,
                   scope=scope)
-              pooled_features = tf.image.resize_bilinear(
+              pooled_features = tf.image.resize(
                   pooled_features,
                   current_config[_TARGET_SIZE],
-                  align_corners=True)
+                  method=tf.image.ResizeMethod.BILINEAR)
               # Set shape for resize_height/resize_width if they are not Tensor.
               resize_height = current_config[_TARGET_SIZE][0]
               resize_width = current_config[_TARGET_SIZE][1]

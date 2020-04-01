@@ -20,12 +20,11 @@ import tensorflow as tf
 from deeplab.core import nas_network
 from deeplab.core import resnet_v1_beta
 from deeplab.core import xception
-from tf_slim.nets import resnet_utils
-from tf_slim.nets.mobilenet import mobilenet_v2
+from tensorflow.contrib.slim.nets import resnet_utils
+from nets.mobilenet import mobilenet_v2
 
 
-import tf_slim
-slim = tf_slim
+slim = tf.contrib.slim
 
 # Default end point for MobileNetv2.
 _MOBILENET_V2_FINAL_ENDPOINT = 'layer_18'
@@ -62,7 +61,7 @@ def _mobilenet_v2(net,
   """
   if divisible_by is None:
     divisible_by = 8 if depth_multiplier == 1.0 else 1
-  with tf.variable_scope(
+  with tf.compat.v1.variable_scope(
       scope, 'MobilenetV2', [net], reuse=reuse) as scope:
     return mobilenet_v2.mobilenet_base(
         net,
@@ -185,7 +184,7 @@ _MEAN_RGB = [123.15, 115.90, 103.06]
 def _preprocess_subtract_imagenet_mean(inputs, dtype=tf.float32):
   """Subtract Imagenet mean RGB value."""
   mean_rgb = tf.reshape(_MEAN_RGB, [1, 1, 1, 3])
-  num_channels = tf.shape(inputs)[-1]
+  num_channels = tf.shape(input=inputs)[-1]
   # We set mean pixel as 0 for the non-RGB channels.
   mean_rgb_extended = tf.concat(
       [mean_rgb, tf.zeros([1, 1, 1, num_channels - 3])], axis=3)
@@ -194,7 +193,7 @@ def _preprocess_subtract_imagenet_mean(inputs, dtype=tf.float32):
 
 def _preprocess_zero_mean_unit_range(inputs, dtype=tf.float32):
   """Map image values from [0, 255] to [-1, 1]."""
-  preprocessed_inputs = (2.0 / 255.0) * tf.to_float(inputs) - 1.0
+  preprocessed_inputs = (2.0 / 255.0) * tf.cast(inputs, dtype=tf.float32) - 1.0
   return tf.cast(preprocessed_inputs, dtype=dtype)
 
 
